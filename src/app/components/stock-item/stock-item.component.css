@@ -1,0 +1,55 @@
+.stock-container{
+  border-radius: 5px;
+  display: inline-block;
+  padding: 10px;
+  background-color: #ffffff;
+  align-content: center;
+}
+
+.stock-container .name h3, .stock-container .name h4 {
+  display: inline-block;
+}
+
+.price {
+  background-color: #c6c6c6;
+  text-align: center;
+  margin: 0 10px 0 10px;
+  border-radius: 5px;
+}
+
+.positive {
+  background-color: #a0e889;
+  text-align: center;
+  margin: 0 10px 0 10px;
+  border-radius: 5px;
+}
+
+.negative {
+  background-color: #b17272;
+  text-align: center;
+  margin: 0 10px 0 10px;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  text-align: center;
+  margin: 10px 10px 0 10px;
+  background-color: #ffb24d;
+  border: none;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 5px;
+}
+
+.btn-primary:disabled{
+  text-align: center;
+  margin: 10px 10px 0 10px;
+  background-color: #afafaf;
+  border: none;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 5px;
+  color: #ffffff;
+}
