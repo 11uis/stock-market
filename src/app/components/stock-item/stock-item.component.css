@@ -3,7 +3,7 @@
   display: inline-block;
   padding: 10px;
   background-color: #ffffff;
-  align-content: center;
+  margin-top: 15px;
 }
 
 .stock-container .name h3, .stock-container .name h4 {
@@ -55,4 +55,12 @@
   font-size: 16px;
   padding: 5px;
   color: #ffffff;
+}
+
+.card-item {
+  display: flex;
+}
+
+.card-item p {
+  font-weight: bold;
 }

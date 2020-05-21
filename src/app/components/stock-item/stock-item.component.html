@@ -1,16 +1,32 @@
-<div class="stock-container">
-  <div class="name">
-    <h3>{{stock.name + ' - (' + stock.code + ')'}}</h3>
+<div *ngFor="let stock of stocks">
+  <div class="stock-container">
+    <div class="name">
+      <h3>{{stock.name + ' - (' + stock.code + ')'}}</h3>
+    </div>
+    <div class="price"
+         [class]="stock.isPositiveChange() ? 'positive' : 'negative'"
+    >
+      € {{stock.price}}
+    </div>
+    <div class="card-item">
+      <button (click)="toggleFavorite(stock)"
+              [disabled]="stock.favorite"
+              class="btn-primary"
+      >
+        Add to Favorite
+      </button>
+      <button (click)="decreaseItems(stock)"
+              [disabled]="stock.quantityCheck"
+              class="btn-primary"
+      >
+        -
+      </button>
+      <p>{{stock.quantity}}</p>
+      <button (click)="increaseItems(stock)"
+              class="btn-primary"
+      >
+        +
+      </button>
+    </div>
   </div>
-  <div class="price"
-       [class]="stock.isPositiveChange ? 'positive' : 'negative'"
-  >
-    € {{stock.price}}
-  </div>
-  <button (click)="toggleFavorite($event)"
-          [disabled]="stock.favorite"
-          class="btn-primary"
-  >
-    Add to Favorite
-  </button>
 </div>
