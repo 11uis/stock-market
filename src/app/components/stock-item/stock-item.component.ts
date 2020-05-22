@@ -13,10 +13,12 @@ export class StockItemComponent implements OnInit {
     this.stock1,
     this.stock2
   ];
+  public stockClasses;
 
   constructor() { }
 
   ngOnInit() {
+    this.stocksPriceChange();
     console.log(this.stock1.isPositiveChange());
     console.log(this.stock2.isPositiveChange());
   }
@@ -48,5 +50,24 @@ export class StockItemComponent implements OnInit {
     }
     return event.quantityCheck;
   }
+
+  // Calculate the difference between origian and current price
+  priceChange(stock) {
+    let diff = (stock.price / stock.previousPrice) - 1;
+    let largeChange = Math.abs(diff) > 0.05;
+    this.stockClasses = {
+      "positive": stock.isPositiveChange(),
+      "negative": !stock.isPositiveChange(),
+      "large-change": largeChange,
+      "small-change": !largeChange
+    };
+  } // End of priceChange(...)
+
+  // Call priceChange for all the stocks in stocks array
+  stocksPriceChange() {
+    for ( let i = 0; i < this.stocks.length; i++) {
+      this.priceChange(this.stocks[i]);
+    }
+  } // End of stocksPriceChange()
 
 }
